@@ -6,7 +6,7 @@ from context_printer import ContextPrinter as Ctp
 # noinspection PyProtectedMember
 from torch.utils.data import DataLoader
 
-from architectures import NormalizingModel
+from src.architectures import NormalizingModel
 
 
 def get_sub_div(data: torch.Tensor, normalization: str) -> Tuple[torch.tensor, torch.tensor]:

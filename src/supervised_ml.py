@@ -8,9 +8,9 @@ from context_printer import ContextPrinter as Ctp
 # noinspection PyProtectedMember
 from torch.utils.data import DataLoader
 
-from federated_util import model_poisoning, model_aggregation
-from metrics import BinaryClassificationResult
-from print_util import print_train_classifier, print_train_classifier_header, print_rates
+from src.federated_util import model_poisoning, model_aggregation
+from src.metrics import BinaryClassificationResult
+from src.print_util import print_train_classifier, print_train_classifier_header, print_rates
 
 
 def optimize(model: nn.Module, data: torch.Tensor, label: torch.Tensor, optimizer: torch.optim.Optimizer, criterion: torch.nn.Module,

@@ -4,7 +4,7 @@ import torch
 from context_printer import Color
 from context_printer import ContextPrinter as Ctp
 
-from metrics import BinaryClassificationResult
+from src.metrics import BinaryClassificationResult
 
 
 class Columns:

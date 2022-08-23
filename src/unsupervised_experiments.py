@@ -7,14 +7,14 @@ from context_printer import ContextPrinter as Ctp
 # noinspection PyProtectedMember
 from torch.utils.data import DataLoader
 
-from architectures import SimpleAutoencoder, NormalizingModel, Threshold
-from data import device_names, ClientData, FederationData, get_benign_attack_samples_per_device
-from federated_util import init_federated_models, model_aggregation, select_mimicked_client, model_poisoning
-from metrics import BinaryClassificationResult
-from ml import set_models_sub_divs, set_model_sub_div
-from print_util import print_federation_round, print_federation_epoch
-from unsupervised_data import get_train_dl, get_val_dl, prepare_dataloaders
-from unsupervised_ml import multitrain_autoencoders, multitest_autoencoders, compute_thresholds, train_autoencoder, \
+from src.architectures import SimpleAutoencoder, NormalizingModel, Threshold
+from src.data import device_names, ClientData, FederationData, get_benign_attack_samples_per_device
+from src.federated_util import init_federated_models, model_aggregation, select_mimicked_client, model_poisoning
+from src.metrics import BinaryClassificationResult
+from src.ml import set_models_sub_divs, set_model_sub_div
+from src.print_util import print_federation_round, print_federation_epoch
+from src.unsupervised_data import get_train_dl, get_val_dl, prepare_dataloaders
+from src.unsupervised_ml import multitrain_autoencoders, multitest_autoencoders, compute_thresholds, train_autoencoder, \
     compute_reconstruction_losses, train_autoencoders_fedsgd
 
 

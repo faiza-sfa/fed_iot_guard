@@ -7,7 +7,7 @@ import torch.utils.data
 # noinspection PyProtectedMember
 from torch.utils.data import DataLoader, Dataset, TensorDataset
 
-from data import mirai_attacks, gafgyt_attacks, split_client_data, ClientData, FederationData, resample_array, split_clients_data, \
+from src.data import mirai_attacks, gafgyt_attacks, split_client_data, ClientData, FederationData, resample_array, split_clients_data, \
     get_benign_attack_samples_per_device
 
 

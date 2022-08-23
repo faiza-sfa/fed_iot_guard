@@ -6,11 +6,11 @@ from typing import Callable, Tuple, List, Dict, Optional
 import numpy as np
 from context_printer import ContextPrinter as Ctp, Color
 
-from data import FederationData, ClientData, DeviceData, get_configuration_data, get_initial_splitting
-from metrics import BinaryClassificationResult
-from saving import create_new_numbered_dir, save_results_test
-from supervised_experiments import local_classifiers_train_test, fedavg_classifiers_train_test, fedsgd_classifiers_train_test
-from unsupervised_experiments import local_autoencoders_train_test, fedavg_autoencoders_train_test, fedsgd_autoencoders_train_test
+from src.data import FederationData, ClientData, DeviceData, get_configuration_data, get_initial_splitting
+from src.metrics import BinaryClassificationResult
+from src.saving import create_new_numbered_dir, save_results_test
+from src.supervised_experiments import local_classifiers_train_test, fedavg_classifiers_train_test, fedsgd_classifiers_train_test
+from src.unsupervised_experiments import local_autoencoders_train_test, fedavg_autoencoders_train_test, fedsgd_autoencoders_train_test
 
 
 def select_experiment_function(experiment: str, federated: Optional[str]) -> Callable:

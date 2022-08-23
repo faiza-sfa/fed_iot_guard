@@ -8,10 +8,10 @@ from context_printer import ContextPrinter as Ctp
 # noinspection PyProtectedMember
 from torch.utils.data import DataLoader
 
-from architectures import Threshold
-from federated_util import model_poisoning, model_aggregation
-from metrics import BinaryClassificationResult
-from print_util import print_autoencoder_loss_stats, print_rates, print_autoencoder_loss_header
+from src.architectures import Threshold
+from src.federated_util import model_poisoning, model_aggregation
+from src.metrics import BinaryClassificationResult
+from src.print_util import print_autoencoder_loss_stats, print_rates, print_autoencoder_loss_header
 
 
 def optimize(model: nn.Module, data: torch.Tensor, optimizer: torch.optim.Optimizer, criterion: torch.nn.Module) -> torch.Tensor:

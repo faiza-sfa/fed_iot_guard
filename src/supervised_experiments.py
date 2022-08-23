@@ -7,14 +7,14 @@ from context_printer import ContextPrinter as Ctp
 # noinspection PyProtectedMember
 from torch.utils.data import DataLoader
 
-from architectures import BinaryClassifier, NormalizingModel
-from data import ClientData, FederationData, device_names, get_benign_attack_samples_per_device
-from federated_util import init_federated_models, model_aggregation, select_mimicked_client, model_poisoning
-from metrics import BinaryClassificationResult
-from ml import set_model_sub_div, set_models_sub_divs
-from print_util import print_federation_round, print_rates, print_federation_epoch
-from supervised_data import get_train_dl, get_test_dl, prepare_dataloaders
-from supervised_ml import multitrain_classifiers, multitest_classifiers, train_classifier, test_classifier, train_classifiers_fedsgd
+from src.architectures import BinaryClassifier, NormalizingModel
+from src.data import ClientData, FederationData, device_names, get_benign_attack_samples_per_device
+from src.federated_util import init_federated_models, model_aggregation, select_mimicked_client, model_poisoning
+from src.metrics import BinaryClassificationResult
+from src.ml import set_model_sub_div, set_models_sub_divs
+from src.print_util import print_federation_round, print_rates, print_federation_epoch
+from src.supervised_data import get_train_dl, get_test_dl, prepare_dataloaders
+from src.supervised_ml import multitrain_classifiers, multitest_classifiers, train_classifier, test_classifier, train_classifiers_fedsgd
 
 
 def local_classifier_train_val(train_data: ClientData, val_data: ClientData, params: SimpleNamespace) -> BinaryClassificationResult:

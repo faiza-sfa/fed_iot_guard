@@ -5,8 +5,6 @@ import pandas as pd
 from context_printer import Color
 from context_printer import ContextPrinter as Ctp
 from sklearn.model_selection import KFold
-import os, psutil
-process = psutil.Process(os.getpid())
 
 all_devices = ['Danmini_Doorbell',
                'Ecobee_Thermostat',
@@ -54,16 +52,12 @@ def read_device_data(device_id: int) -> DeviceData:
     device_data = {'benign': pd.read_csv(benign_paths[device],on_bad_lines='skip',low_memory=False).to_numpy()}
 
     if device in mirai_devices:
-        print("device",device)
-        print(process.memory_info().rss) 
-
-#         device_data.update({'mirai_' + attack: pd.read_csv(attack_paths[device] ).to_numpy()
-#                             for attack, attack_paths in zip(mirai_attacks, mirai_paths)})
         for attack, attack_paths in zip(mirai_attacks, mirai_paths):
-            device_data.update({'mirai_' + attack: pd.read_csv(attack_paths[device],header = None, low_memory=False, on_bad_lines='skip').to_numpy()})
-
+            # print('Start of mirai_' + attack)
+            device_data.update({'mirai_' + attack: pd.read_csv(attack_paths[device],on_bad_lines='skip').to_numpy()})
+            # print('mirai_' + attack+' complete')
     # device_data.update({'gafgyt_' + attack: pd.read_csv(attack_paths[device],error_bad_lines=False).to_numpy()
-    device_data.update({'gafgyt_' + attack: pd.read_csv(attack_paths[device], on_bad_lines='skip').to_numpy()
+    device_data.update({'gafgyt_' + attack: pd.read_csv(attack_paths[device],on_bad_lines='skip',low_memory=False).to_numpy()
                         for attack, attack_paths in zip(gafgyt_attacks, gafgyt_paths)})
     return device_data
 

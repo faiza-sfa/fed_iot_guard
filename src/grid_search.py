@@ -6,11 +6,11 @@ from typing import List, Dict, Callable, Union
 
 from context_printer import ContextPrinter as Ctp, Color
 
-from data import ClientData, split_client_data_current_fold, split_client_data, DeviceData, device_names, get_client_data
-from metrics import BinaryClassificationResult
-from saving import create_new_numbered_dir, save_results_gs
-from supervised_experiments import local_classifier_train_val
-from unsupervised_experiments import local_autoencoder_train_val
+from src.data import ClientData, split_client_data_current_fold, split_client_data, DeviceData, device_names, get_client_data
+from src.metrics import BinaryClassificationResult
+from src.saving import create_new_numbered_dir, save_results_gs
+from src.supervised_experiments import local_classifier_train_val
+from src.unsupervised_experiments import local_autoencoder_train_val
 
 
 # Returns the list of unique clients as a set of tuples. Each tuple represents a client, and each tuple's element represents a device.

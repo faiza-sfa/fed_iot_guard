@@ -8,8 +8,11 @@ from context_printer import ContextPrinter as Ctp, Color
 # noinspection PyProtectedMember
 from torch.utils.data import DataLoader
 
-from architectures import NormalizingModel
-from ml import set_models_sub_divs
+from src.architectures import NormalizingModel
+from src.ml import set_models_sub_divs,set_model_sub_div
+# from architectures import NormalizingModel
+# from ml import set_models_sub_divs,set_model_sub_div
+
 
 
 def federated_averaging(global_model: torch.nn.Module, models: List[torch.nn.Module]) -> None:
